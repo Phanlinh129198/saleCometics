@@ -10,8 +10,8 @@
 				<div class="pull-right auto-width-right">
 					<ul class="top-details menu-beta l-inline">
 						<li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+						<li><a href="{{route('dang-ki')}}">Đăng kí</a></li>
+						<li><a href="{{route('dang-nhap')}}">Đăng nhập</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -90,19 +90,16 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
 						<li><a href="#">Sản phẩm</a>
 							<ul class="sub-menu">
-								<li><a href="product_type.html">Son môi</a></li>
-								<li><a href="product_type.html">Toner</a></li>
-								<li><a href="product_type.html">Nước tẩy trang</a></li>
-								<li><a href="product_type.html">Mặt nạ</a></li>
-								<li><a href="product_type.html">Serum</a></li>
-								<li><a href="product_type.html">Cushion</a></li>
+								@foreach($loai_sp as $loai)
+								<li><a href="{{route('loai-san-pham',$loai->id)}}">{{$loai->name}}</a></li>
+								@endforeach
 							</ul>
 						</li>
-						<li><a href="about.html">Giới thiệu</a></li>
-						<li><a href="contacts.html">Liên hệ</a></li>
+						<li><a href="{{route('gioi-thieu')}}">Giới thiệu</a></li>
+						<li><a href="{{route('lien-he')}}">Liên hệ</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>

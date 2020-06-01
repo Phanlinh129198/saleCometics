@@ -18,25 +18,37 @@ Route::get('/', function () {
 });
 
 Route::get('index', [
-'as'=>'trang-chu',
-'uses'=>'PageController@getIndex'
+    'as' => 'trang-chu',
+    'uses' => 'PageController@getIndex'
 ]);
 
-Route::get('product-type', [
-    'as'=>'loai-san-pham',
-    'uses'=>'PageController@getLoaiSP'
-    ]);
+Route::get('product-type/{type}', [
+    'as' => 'loai-san-pham',
+    'uses' => 'PageController@getLoaiSP'
+]);
 
-    Route::get('product', [
-        'as'=>'san-pham',
-        'uses'=>'PageController@getSP'
-        ]);
+Route::get('product-Detail/{id}', [
+    'as' => 'chi-tiet-san-pham',
+    'uses' => 'PageController@getDetailSP'
+]);
 
-        Route::get('contacts', [
-            'as'=>'lien-he',
-            'uses'=>'PageController@getContacts'
-            ]);
-            Route::get('about', [
-                'as'=>'gioi-thieu',
-                'uses'=>'PageController@getAbout'
-                ]);
+Route::get('contacts', [
+    'as' => 'lien-he',
+    'uses' => 'PageController@getContacts'
+]);
+Route::get('about', [
+    'as' => 'gioi-thieu',
+    'uses' => 'PageController@getAbout'
+]);
+Route::get('login', [
+    'as' => 'dang-nhap',
+    'uses' => 'PageController@getLogin'
+]);
+Route::get('register', [
+    'as' => 'dang-ki',
+    'uses' => 'PageController@getRegister'
+]);
+Route::post('register', [
+    'as' => 'dang-ki-1',
+    'uses' => 'PageController@postRegister'
+]);
